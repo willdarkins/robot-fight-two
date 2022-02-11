@@ -10,7 +10,6 @@ let enemyAttack = 12;
 
 const fight = (enemyName) => {
     while (enemyHealth > 0 && playerHealth > 0) {
-        // window.alert('Welcome to Robot Galdiators ' + playerName + '👋... You little bitch!')
         let fightPrompt = window.prompt('Would you like to FIGHT or SKIP this battle? Enter \'FIGHT\' or \'SKIP\' to choose.')
         if (fightPrompt === 'FIGHT' || fightPrompt === 'fight') {
             enemyHealth -= playerAttack;
@@ -26,7 +25,7 @@ const fight = (enemyName) => {
             if (playerHealth > 0) {
                 window.alert(playerName + ' still has ' + playerHealth + ' health points remaining, and is still alive!')
             } else {
-                window.alert(playerName + ' is dead as a fucking door nail 💀')
+                window.alert(playerName + ' is dead as a fucking door nail! GAME OVER 💀')
                 break;
             }
         } else if (fightPrompt === 'SKIP' || fightPrompt === 'skip') {
@@ -46,8 +45,13 @@ const fight = (enemyName) => {
 
 }
 
-for (let i = 0; i < enemyNames.length; i++) {
-    let pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemyName)
+const startGame = () => {
+    for (let i = 0; i < enemyNames.length; i++) {
+        if(playerHealth > 0) {
+            window.alert('Welcome to Robot Galdiators ' + playerName + '👋... You little bitch! Round ' + (i + 1))
+            let pickedEnemyName = enemyNames[i];
+            enemyHealth = 50;
+            fight(pickedEnemyName)
+        }
+    }
 }
