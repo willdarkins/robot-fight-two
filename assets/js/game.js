@@ -2,9 +2,12 @@ console.log(Math)
 
 let playerName = window.prompt('What is your player\'s name?')
 
-let playerHealth = 100;
-let playerAttack = 10;
-let playerMoney = 20;
+const playerInfo = {
+    name: prompt('What is your robot\'s name?'),
+    health: 100,
+    attack: 10,
+    money: 10
+}
 
 let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
 enemyHealth = Math.floor(Math.random() * 21) + 40;
