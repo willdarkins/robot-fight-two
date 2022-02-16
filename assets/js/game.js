@@ -1,3 +1,5 @@
+console.log(Math)
+
 let playerName = window.prompt('What is your player\'s name?')
 
 let playerHealth = 100;
@@ -12,9 +14,9 @@ const fight = (enemyName) => {
     while (enemyHealth > 0 && playerHealth > 0) {
         let fightPrompt = window.prompt('Would you like to FIGHT or SKIP this battle? Enter \'FIGHT\' or \'SKIP\' to choose.')
         if (fightPrompt === 'FIGHT' || fightPrompt === 'fight') {
-            enemyHealth -= playerAttack;
+            enemyHealth = Math.max(0, enemyHealth - playerAttack);
             window.alert(playerName + ' attacked! ' + enemyName + ' now has ' + enemyHealth + ' health points remaining.')
-            playerHealth -= enemyAttack;
+            playerHealth = Math.max(0, playerHealth - enemyAttack);
             window.alert(enemyName + ' attacked! ' + playerName + ' now has ' + playerHealth + ' health points remaining.')
             if (enemyHealth <= 0) {
                 window.alert(enemyName + ' has died! BUUUUUMMER!')
@@ -31,7 +33,7 @@ const fight = (enemyName) => {
         } else if (fightPrompt === 'SKIP' || fightPrompt === 'skip') {
             let confirmSkip = window.confirm('You sure you want to bitch out?')
             if (confirmSkip) {
-                playerMoney -= 10
+                playerMoney = Math.max(0, playerMoney - 10);
                 window.alert(playerName + ' proved they are indeed a little bitch, and skipped this fight... pussy... 10 player moneies gone for you! ' + playerName + ' now has ' + playerMoney + ' player money remaining.')
                 break;
             } else {
@@ -78,7 +80,6 @@ const endGame = () => {
         startGame();
     } else {
         window.alert('Thanks for playing Robot Gladiators! Love You!')
-        break;
     }
 }
 
