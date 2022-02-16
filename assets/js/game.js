@@ -7,7 +7,7 @@ let playerAttack = 10;
 let playerMoney = 20;
 
 let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
-enemyHealth = Math.floor(Math.random() * 60);
+enemyHealth = Math.floor(Math.random() * 21) + 40;
 let enemyAttack = 12;
 
 const fight = (enemyName) => {
