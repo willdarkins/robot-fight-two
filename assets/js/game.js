@@ -7,9 +7,20 @@ const playerInfo = {
     money: 10
 }
 
-let enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
-enemyHealth = Math.floor(Math.random() * 21) + 40;
-let enemyAttack = 12;
+var enemyInfo = [
+    {
+      name: "Roborto",
+      attack: 12
+    },
+    {
+      name: "Amy Android",
+      attack: 13
+    },
+    {
+      name: "Robo Trumble",
+      attack: 14
+    }
+  ];
 
 const fight = (enemyName) => {
     while (enemyHealth > 0 && playerInfo.health > 0) {
