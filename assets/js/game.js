@@ -14,7 +14,7 @@ const fight = (enemyName) => {
     while (enemyHealth > 0 && playerHealth > 0) {
         let fightPrompt = window.prompt('Would you like to FIGHT or SKIP this battle? Enter \'FIGHT\' or \'SKIP\' to choose.')
         if (fightPrompt === 'FIGHT' || fightPrompt === 'fight') {
-            enemyHealth = Math.max(0, enemyHealth - playerAttack);
+            enemyHealth = randomNumber(40, 60);
             window.alert(playerName + ' attacked! ' + enemyName + ' now has ' + enemyHealth + ' health points remaining.')
             playerHealth = Math.max(0, playerHealth - enemyAttack);
             window.alert(enemyName + ' attacked! ' + playerName + ' now has ' + playerHealth + ' health points remaining.')
@@ -125,5 +125,12 @@ const shop = () => {
     }
 
 }
+
+// function to generate a random numeric value
+const randomNumber = (min, max) => {
+    const value = Math.floor(Math.random() * (max - min + 1) + min);
+  
+    return value;
+  };
 
 startGame()
